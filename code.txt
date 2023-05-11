@@ -1,0 +1,28 @@
+fun MoreThan50(x:int) -> bool{
+    let y:int = 23;
+    if(x <= 50){
+        return false;
+    }
+    return true;
+}
+
+let x:int = 45;
+while (x < 4.2){
+    __print MoreThan50(x);
+    x = x + 1;
+}
+
+while (MoreThan50(x)){
+    __print MoreThan50(x);
+    x = x + 1;
+}
+
+let w:int = __width;
+let h:int = __height;
+
+for (let u:int = 0; u < w; u = u+1){
+    for (let v:int = 0; v < h; v = v+1){
+        __pixelr u, v, 1, 1, #00ff00;
+        __pixel u, v, #00ff00;
+    }
+}
