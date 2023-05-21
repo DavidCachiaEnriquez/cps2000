@@ -1,0 +1,37 @@
+fun randomColour() -> int{
+    return __randi 16777215;
+}
+
+fun printSquare(a:int, b:int, c:int, d:int, e:int) -> int{
+    let randomColour:int = randomColour();
+    __pixelr a, 1, b, b, randomColour;
+    __pixelr a, 1, b, c, randomColour;
+
+    __pixelr 1, d, b, b, randomColour;
+    __pixelr 1, d, e, b, randomColour;
+
+    return 0;
+}
+
+__pixelr __height, __width, 0, 0, #123456;
+
+let looper:int = 0;
+
+while(looper == 0){
+
+    let u:int = __width-1;
+    let v:int = __height-1;
+
+    let h:int = __height;
+    let w:int = __width;
+
+    for(let x:int = 0; x < (__width/2); x = x+1){
+
+        let fCall:int = printSquare(h, x, u, w, v);
+
+        u = u-1; v = v-1;
+        h = h-2; w = w-2;
+        __delay 30;
+
+    }
+}

@@ -1,0 +1,34 @@
+fun getRandomColour() -> int{
+    return __randi 16777215;
+}
+
+__pixelr __height, __width, 0, 0, #123456;
+
+let looper:int = 0;
+let fCall:int = 0;
+while (looper == 0){
+
+    let z:int = getRandomColour();
+    for (let x:int = __width-1; x >= 0; x = x - 1){
+        __delay 10;
+        __pixelr __height, 1, x, x, z;
+    }
+
+    z = __randi 16777215;
+    for (let x:int = __width-1; x >= 0; x = x - 1){
+        __delay 10;
+        __pixelr __height, 1, x, (__width-x)-1, z;
+    }
+
+    z = __randi 16777215;
+    for (let x:int = 0; x < __width; x = x + 1){
+        __delay 10;
+        __pixelr 1, __width, x, x, z;
+    }
+
+    z = __randi 16777215;
+    for (let x:int = 0; x < __width; x = x + 1){
+        __delay 10;
+        __pixelr __height-x, 1, 0, x, z;
+    }
+}
