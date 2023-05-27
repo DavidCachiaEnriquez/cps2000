@@ -4,9 +4,8 @@ fun getRandomColour() -> int{
 
 __pixelr __height, __width, 0, 0, #123456;
 
-let looper:int = 0;
 let fCall:int = 0;
-while (looper == 0){
+while (true){
 
     let z:int = getRandomColour();
     for (let x:int = __width-1; x >= 0; x = x - 1){

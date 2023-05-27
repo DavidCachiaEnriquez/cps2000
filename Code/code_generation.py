@@ -24,7 +24,7 @@ class codeGeneration:
         print("PixIr code generated")
 
     # CREATE CODE
-    def traverse(self, tree, list):        
+    def traverse(self, tree, list):    
         if tree.name == "ASSIGNMENT":
             varName = tree.children[0].value
             varValue = tree.children[2]
@@ -592,6 +592,13 @@ class codeGeneration:
                 self.P.append("push ." + value.children[0].value)
                 self.P.append("call")
 
+        if value.name == "UNARY":
+            temp = "push " + str(value.children[0].name)
+            val = self.getVarValue(value.children[1])
+            self.P.pop(-1)
+            temp += val
+            self.P.append(temp)
+
         if value.name == "SUBEXPR":
             self.getVarValue(value.children[0])
 
@@ -665,8 +672,12 @@ class codeGeneration:
             return self.getVarValue(value.children[0])
 
         if value.name == "BOOLEANLITERAL":
-            self.addPush( value.value)
-            return value.value
+            if value.value == "true":
+                self.addPush(1)
+                return 1
+            else:
+                self.addPush(0)
+                return 0            
 
         if value.name == "INTEGERLITERAL":
             self.addPush(value.value)
@@ -718,6 +729,11 @@ class codeGeneration:
                 tempMain.append("push ." + value.children[0].value)
                 tempMain.append("call")
                 return tempMain
+
+        if value.name == "UNARY":
+            temp = "push " + str(value.children[0].name)
+            temp += self.getVarValueNP(value.children[1])[5:]
+            return temp
 
         if value.name == "SUBEXPR":
             return self.getVarValueNP(value.children[0])
@@ -797,7 +813,10 @@ class codeGeneration:
             return self.getVarValueNP(value.children[0])
 
         if value.name == "BOOLEANLITERAL":
-            return "push " + value.value
+            if value.value == "true":
+                return "push 1"
+            else:
+                return "push 0"
 
         if value.name == "INTEGERLITERAL":
             return "push " + value.value

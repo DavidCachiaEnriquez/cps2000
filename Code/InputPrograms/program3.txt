@@ -15,10 +15,7 @@ fun printSquare(a:int, b:int, c:int, d:int, e:int) -> int{
 
 __pixelr __height, __width, 0, 0, #123456;
 
-let looper:int = 0;
-
-while(looper == 0){
-
+while(true){
     let u:int = __width-1;
     let v:int = __height-1;
 
@@ -32,6 +29,5 @@ while(looper == 0){
         u = u-1; v = v-1;
         h = h-2; w = w-2;
         __delay 30;
-
     }
 }

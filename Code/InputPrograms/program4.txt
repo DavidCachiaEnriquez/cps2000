@@ -13,7 +13,7 @@ while(x < __width){
     }else{
         __pixelr bHeight, bWidth, startPoint, x, #1a1818;
         if (counter == 6){
-            counter = 0-1;
+            counter = -1;
         }
     }
     x = x + bWidth;
@@ -54,7 +54,7 @@ while(y < __width){
 
     if (counter == 6){
         __pixelr mHeight, mWidth, startPoint, y, #dfe0eb;
-        counter = 0-1;
+        counter = -1;
     }
 
     y = y + mWidth;
@@ -95,17 +95,15 @@ while(z < __width){
 
     if (counter == 6){
         __pixelr tHeight, tWidth, startPoint, z, #0a178c;
-        counter = 0-1;
+        counter = -1;
     }
 
     z = z + tWidth;
     counter = counter + 1;
 }
 
-
-let looper:int = 0;
 counter = 6;
-while(looper == 0){
+while(true){
 
     if (counter < 0){
         counter = 6;
@@ -140,7 +138,7 @@ while(looper == 0){
 
         if (counter == 6){
             __pixelr tHeight, tWidth, startPoint, a, #0a178c;
-            counter = 0-1;
+            counter = -1;
         }
 
         a = a + tWidth;

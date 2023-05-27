@@ -76,11 +76,10 @@
             <ASSIGNMENT>
               <IDENTIFIER> counter </IDENTIFIER>
               <EQUALS> = </EQUALS>
-              <SIMPLEEXPR>
-                <INTEGERLITERAL> 0 </INTEGERLITERAL>
-                <ADDITIVEOP> - </ADDITIVEOP>
+              <UNARY>
+                <-> - </->
                 <INTEGERLITERAL> 1 </INTEGERLITERAL>
-              </SIMPLEEXPR>
+              </UNARY>
             </ASSIGNMENT>
           </IFSTATEMENT>
         </BLOCK>
@@ -252,11 +251,10 @@
           <ASSIGNMENT>
             <IDENTIFIER> counter </IDENTIFIER>
             <EQUALS> = </EQUALS>
-            <SIMPLEEXPR>
-              <INTEGERLITERAL> 0 </INTEGERLITERAL>
-              <ADDITIVEOP> - </ADDITIVEOP>
+            <UNARY>
+              <-> - </->
               <INTEGERLITERAL> 1 </INTEGERLITERAL>
-            </SIMPLEEXPR>
+            </UNARY>
           </ASSIGNMENT>
         </BLOCK>
       </IFSTATEMENT>
@@ -427,11 +425,10 @@
           <ASSIGNMENT>
             <IDENTIFIER> counter </IDENTIFIER>
             <EQUALS> = </EQUALS>
-            <SIMPLEEXPR>
-              <INTEGERLITERAL> 0 </INTEGERLITERAL>
-              <ADDITIVEOP> - </ADDITIVEOP>
+            <UNARY>
+              <-> - </->
               <INTEGERLITERAL> 1 </INTEGERLITERAL>
-            </SIMPLEEXPR>
+            </UNARY>
           </ASSIGNMENT>
         </BLOCK>
       </IFSTATEMENT>
@@ -455,23 +452,13 @@
       </ASSIGNMENT>
     </BLOCK>
   </WHILESTATEMENT>
-  <VARIABLEDECL>
-    <IDENTIFIER> looper </IDENTIFIER>
-    <TYPE> int </TYPE>
-    <EQUALS> = </EQUALS>
-    <INTEGERLITERAL> 0 </INTEGERLITERAL>
-  </VARIABLEDECL>
   <ASSIGNMENT>
     <IDENTIFIER> counter </IDENTIFIER>
     <EQUALS> = </EQUALS>
     <INTEGERLITERAL> 6 </INTEGERLITERAL>
   </ASSIGNMENT>
   <WHILESTATEMENT>
-    <EXPR>
-      <IDENTIFIER> looper </IDENTIFIER>
-      <RELATIONALOP> == </RELATIONALOP>
-      <INTEGERLITERAL> 0 </INTEGERLITERAL>
-    </EXPR>
+    <BOOLEANLITERAL> true </BOOLEANLITERAL>
     <BLOCK>
       <IFSTATEMENT>
         <EXPR>
@@ -606,11 +593,10 @@
               <ASSIGNMENT>
                 <IDENTIFIER> counter </IDENTIFIER>
                 <EQUALS> = </EQUALS>
-                <SIMPLEEXPR>
-                  <INTEGERLITERAL> 0 </INTEGERLITERAL>
-                  <ADDITIVEOP> - </ADDITIVEOP>
+                <UNARY>
+                  <-> - </->
                   <INTEGERLITERAL> 1 </INTEGERLITERAL>
-                </SIMPLEEXPR>
+                </UNARY>
               </ASSIGNMENT>
             </BLOCK>
           </IFSTATEMENT>

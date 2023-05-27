@@ -10,10 +10,8 @@ fun printPixels(h:int, w:int, p1:int, p2:int) -> int{
 
 __pixelr __height, __width, 0, 0, #123456;
 
-let looper:int = 0;
 let fCall:int = 0;
-
-while (looper == 0){
+while (true){
 
     for (let x:int = __width-1; x >= 0; x = x - 1){
         fCall = printPixels(__height, 1, x, x);

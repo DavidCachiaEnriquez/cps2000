@@ -54,11 +54,9 @@ class XMLGeneration:
             else:
                 for child in tree.children:
                     temp.append(self.createXMLMinimized(child))
-                    temp = self.flatten(temp)
-                    
+                    temp = self.flatten(temp)       
         else:
             temp.append(self.space + "<" + str(tree.name) + "> " + str(tree.value) + " </" + tree.name + ">")
-
         return temp
 
     def flatten(self, temp):

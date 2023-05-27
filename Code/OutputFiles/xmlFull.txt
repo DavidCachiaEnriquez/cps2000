@@ -323,17 +323,20 @@
                           <SIMPLEEXPR>
                             <TERM>
                               <FACTOR>
-                                <LITERAL>
-                                  <INTEGERLITERAL> 0 </INTEGERLITERAL>
-                                </LITERAL>
-                              </FACTOR>
-                            </TERM>
-                            <ADDITIVEOP> - </ADDITIVEOP>
-                            <TERM>
-                              <FACTOR>
-                                <LITERAL>
-                                  <INTEGERLITERAL> 1 </INTEGERLITERAL>
-                                </LITERAL>
+                                <UNARY>
+                                  <-> - </->
+                                  <EXPR>
+                                    <SIMPLEEXPR>
+                                      <TERM>
+                                        <FACTOR>
+                                          <LITERAL>
+                                            <INTEGERLITERAL> 1 </INTEGERLITERAL>
+                                          </LITERAL>
+                                        </FACTOR>
+                                      </TERM>
+                                    </SIMPLEEXPR>
+                                  </EXPR>
+                                </UNARY>
                               </FACTOR>
                             </TERM>
                           </SIMPLEEXPR>
@@ -1049,17 +1052,20 @@
                     <SIMPLEEXPR>
                       <TERM>
                         <FACTOR>
-                          <LITERAL>
-                            <INTEGERLITERAL> 0 </INTEGERLITERAL>
-                          </LITERAL>
-                        </FACTOR>
-                      </TERM>
-                      <ADDITIVEOP> - </ADDITIVEOP>
-                      <TERM>
-                        <FACTOR>
-                          <LITERAL>
-                            <INTEGERLITERAL> 1 </INTEGERLITERAL>
-                          </LITERAL>
+                          <UNARY>
+                            <-> - </->
+                            <EXPR>
+                              <SIMPLEEXPR>
+                                <TERM>
+                                  <FACTOR>
+                                    <LITERAL>
+                                      <INTEGERLITERAL> 1 </INTEGERLITERAL>
+                                    </LITERAL>
+                                  </FACTOR>
+                                </TERM>
+                              </SIMPLEEXPR>
+                            </EXPR>
+                          </UNARY>
                         </FACTOR>
                       </TERM>
                     </SIMPLEEXPR>
@@ -1770,17 +1776,20 @@
                     <SIMPLEEXPR>
                       <TERM>
                         <FACTOR>
-                          <LITERAL>
-                            <INTEGERLITERAL> 0 </INTEGERLITERAL>
-                          </LITERAL>
-                        </FACTOR>
-                      </TERM>
-                      <ADDITIVEOP> - </ADDITIVEOP>
-                      <TERM>
-                        <FACTOR>
-                          <LITERAL>
-                            <INTEGERLITERAL> 1 </INTEGERLITERAL>
-                          </LITERAL>
+                          <UNARY>
+                            <-> - </->
+                            <EXPR>
+                              <SIMPLEEXPR>
+                                <TERM>
+                                  <FACTOR>
+                                    <LITERAL>
+                                      <INTEGERLITERAL> 1 </INTEGERLITERAL>
+                                    </LITERAL>
+                                  </FACTOR>
+                                </TERM>
+                              </SIMPLEEXPR>
+                            </EXPR>
+                          </UNARY>
                         </FACTOR>
                       </TERM>
                     </SIMPLEEXPR>
@@ -1838,24 +1847,6 @@
     </WHILESTATEMENT>
   </STATEMENT>
   <STATEMENT>
-    <VARIABLEDECL>
-      <IDENTIFIER> looper </IDENTIFIER>
-      <TYPE> int </TYPE>
-      <EQUALS> = </EQUALS>
-      <EXPR>
-        <SIMPLEEXPR>
-          <TERM>
-            <FACTOR>
-              <LITERAL>
-                <INTEGERLITERAL> 0 </INTEGERLITERAL>
-              </LITERAL>
-            </FACTOR>
-          </TERM>
-        </SIMPLEEXPR>
-      </EXPR>
-    </VARIABLEDECL>
-  </STATEMENT>
-  <STATEMENT>
     <ASSIGNMENT>
       <IDENTIFIER> counter </IDENTIFIER>
       <EQUALS> = </EQUALS>
@@ -1878,16 +1869,8 @@
         <SIMPLEEXPR>
           <TERM>
             <FACTOR>
-              <IDENTIFIER> looper </IDENTIFIER>
-            </FACTOR>
-          </TERM>
-        </SIMPLEEXPR>
-        <RELATIONALOP> == </RELATIONALOP>
-        <SIMPLEEXPR>
-          <TERM>
-            <FACTOR>
               <LITERAL>
-                <INTEGERLITERAL> 0 </INTEGERLITERAL>
+                <BOOLEANLITERAL> true </BOOLEANLITERAL>
               </LITERAL>
             </FACTOR>
           </TERM>
@@ -2518,17 +2501,20 @@
                           <SIMPLEEXPR>
                             <TERM>
                               <FACTOR>
-                                <LITERAL>
-                                  <INTEGERLITERAL> 0 </INTEGERLITERAL>
-                                </LITERAL>
-                              </FACTOR>
-                            </TERM>
-                            <ADDITIVEOP> - </ADDITIVEOP>
-                            <TERM>
-                              <FACTOR>
-                                <LITERAL>
-                                  <INTEGERLITERAL> 1 </INTEGERLITERAL>
-                                </LITERAL>
+                                <UNARY>
+                                  <-> - </->
+                                  <EXPR>
+                                    <SIMPLEEXPR>
+                                      <TERM>
+                                        <FACTOR>
+                                          <LITERAL>
+                                            <INTEGERLITERAL> 1 </INTEGERLITERAL>
+                                          </LITERAL>
+                                        </FACTOR>
+                                      </TERM>
+                                    </SIMPLEEXPR>
+                                  </EXPR>
+                                </UNARY>
                               </FACTOR>
                             </TERM>
                           </SIMPLEEXPR>

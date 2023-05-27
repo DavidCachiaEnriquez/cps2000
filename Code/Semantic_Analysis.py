@@ -193,9 +193,7 @@ class semanticAnalysis:
             self.symbols.variables.pop(-1); self.symbols.functions.pop(-1)
     
     # GETTING VALUE TYPE OF EXPRESSION
-    def getVarType(self, tree):        
-
-        # if str(type(tree)) == "<class '__main__.NTerminalNode'>":
+    def getVarType(self, tree):       
         if isinstance(tree, NTerminalNode):
             if tree.name == "FUNCTIONCALL":
                 funName = tree.children[0].value
@@ -308,8 +306,7 @@ class semanticAnalysis:
             num.append(tree)
             return num
         
-        elif str(type(tree)) == "<class '__main__.NTerminalNode'>":
-
+        elif isinstance(tree, NTerminalNode):
             for child in tree.children:
                 temp = self.getReturns(child)
                 

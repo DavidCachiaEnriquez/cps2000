@@ -41,10 +41,10 @@ width
 push [4:1]
 lt
 cjmp
-push #PC+52
+push #PC+50
 jmp
 oframe
-push #PC+28
+push #PC+26
 push 1
 push [3:2]
 eq
@@ -61,11 +61,9 @@ push 6
 push [3:3]
 eq
 cjmp
-push #PC+8
+push #PC+6
 jmp
-push 1
-push 0
-sub
+push -1
 push 3
 push 3
 st
@@ -91,7 +89,7 @@ add
 push 3
 push 1
 st
-push #PC-55
+push #PC-53
 jmp
 cframe
 push [1:0]
@@ -128,7 +126,7 @@ width
 push [7:1]
 lt
 cjmp
-push #PC+127
+push #PC+125
 jmp
 oframe
 push #PC+7
@@ -226,7 +224,7 @@ push 6
 push [3:2]
 eq
 cjmp
-push #PC+14
+push #PC+12
 jmp
 push #dfe0eb
 push [5:2]
@@ -234,9 +232,7 @@ push [6:2]
 push [0:2]
 push [7:2]
 pixelr
-push 1
-push 0
-sub
+push -1
 push 3
 push 2
 st
@@ -253,7 +249,7 @@ add
 push 3
 push 1
 st
-push #PC-130
+push #PC-128
 jmp
 cframe
 push [5:0]
@@ -290,7 +286,7 @@ width
 push [10:1]
 lt
 cjmp
-push #PC+127
+push #PC+125
 jmp
 oframe
 push #PC+7
@@ -388,7 +384,7 @@ push 6
 push [3:2]
 eq
 cjmp
-push #PC+14
+push #PC+12
 jmp
 push #0a178c
 push [8:2]
@@ -396,9 +392,7 @@ push [9:2]
 push [0:2]
 push [10:2]
 pixelr
-push 1
-push 0
-sub
+push -1
 push 3
 push 2
 st
@@ -415,26 +409,18 @@ add
 push 3
 push 1
 st
-push #PC-130
+push #PC-128
 jmp
 cframe
-push 1
-alloc
-push 0
-push 11
-push 0
-st
 push 6
 push 3
 push 0
 st
 oframe
-push #PC+7
-push 0
-push [11:1]
-eq
+push #PC+5
+push 1
 cjmp
-push #PC+165
+push #PC+163
 jmp
 oframe
 push #PC+7
@@ -461,7 +447,7 @@ width
 push [0:1]
 lt
 cjmp
-push #PC+127
+push #PC+125
 jmp
 oframe
 push #PC+7
@@ -559,7 +545,7 @@ push 6
 push [3:3]
 eq
 cjmp
-push #PC+14
+push #PC+12
 jmp
 push #0a178c
 push [8:3]
@@ -567,9 +553,7 @@ push [9:3]
 push [0:3]
 push [0:2]
 pixelr
-push 1
-push 0
-sub
+push -1
 push 3
 push 3
 st
@@ -586,7 +570,7 @@ add
 push 3
 push 2
 st
-push #PC-130
+push #PC-128
 jmp
 cframe
 push 1
@@ -597,7 +581,7 @@ push 1
 st
 push 250
 delay
-push #PC-168
+push #PC-164
 jmp
 cframe
 halt
