@@ -1,12 +1,5 @@
 import re
 
-# TOKEN CLASS
-class Token:
-    def __init__(self, inputValue, inputType):
-        self.value = inputValue
-        self.type = inputType
-
-
 # LEXER CLASS
 class Lexer:
     def __init__(self, input):
@@ -45,8 +38,6 @@ class Lexer:
         
         print("L E X E R")
         self.scanText()
-        # print("\nToken List:")
-        # # print(self.tokenList)
         print("Code accepted by Lexer")
 
     # SCAN GIVEN CODE
@@ -74,13 +65,12 @@ class Lexer:
                 # if value and type remained empyty
                 if value == None or type == None:
                     raise Exception("Error in Syntax")
+                
                 # if both value and type have been assigned
                 else:
                     if type == "KEYWORDS" or type == "OTHER":
                         self.tokenList.append((value.upper(), value))
-                        # self.tokenList.append(Token(value, "<"+value+">"))
                     else:
                         self.tokenList.append((type, value))
-                        # self.tokenList.append(Token(value, type))
                     self.pos += len(value)
 

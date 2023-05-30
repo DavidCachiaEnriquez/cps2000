@@ -10,7 +10,6 @@ class XMLGeneration:
         print("\nX M L   G E N E R A T I O N")
         xmlFull = self.createXML(self.AST)
         xmlMin = self.createXMLMinimized(self.AST)
-
         self.printXML(xmlFull, xmlMin)
         print("Printed XML Full and XML Minimized")       
 

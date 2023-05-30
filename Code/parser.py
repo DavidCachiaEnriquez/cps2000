@@ -21,7 +21,8 @@ class Parser:
 
         print("\nP A R S E R")
         self.parseCode()
-        print("Code Accepted by Parser")        
+        print("Code Accepted by Parser")       
+
 
     # PARSE GIVEN CODE
     def parseCode(self):
@@ -155,9 +156,10 @@ class Parser:
         nTree = NTerminalNode("TERM")
         self.factor(nTree)
         
-        while self.tokenList and self.tokenList[0][0] == "MULTIPLICATIVEOP":
-            nTree.children.append(TerminalNode("MULTIPLICATIVEOP", self.tokenList[0][1])); self.getNextToken()
-            self.factor(nTree)
+        if len(self.tokenList) > 0:
+            while  self.tokenList[0][0] == "MULTIPLICATIVEOP":
+                nTree.children.append(TerminalNode("MULTIPLICATIVEOP", self.tokenList[0][1])); self.getNextToken()
+                self.factor(nTree)
         
         tree.children.append(nTree)
         
@@ -165,9 +167,10 @@ class Parser:
         nTree = NTerminalNode("SIMPLEEXPR")
         self.term(nTree)
         
-        while self.tokenList and self.tokenList[0][0] == "ADDITIVEOP" or self.tokenList[0][1] == "-":
-            nTree.children.append(TerminalNode("ADDITIVEOP", self.tokenList[0][1])); self.getNextToken()
-            self.term(nTree)
+        if len(self.tokenList) > 0:
+            while self.tokenList[0][0] == "ADDITIVEOP" or self.tokenList[0][1] == "-":
+                nTree.children.append(TerminalNode("ADDITIVEOP", self.tokenList[0][1])); self.getNextToken()
+                self.term(nTree)
         
         tree.children.append(nTree)
 
@@ -175,9 +178,10 @@ class Parser:
         nTree = NTerminalNode("EXPR")
         self.simpleExpr(nTree)
         
-        while self.tokenList and self.tokenList[0][0] == "RELATIONALOP":
-            nTree.children.append(TerminalNode("RELATIONALOP", self.tokenList[0][1])); self.getNextToken()
-            self.simpleExpr(nTree)
+        if len(self.tokenList) > 0:
+            while self.tokenList[0][0] == "RELATIONALOP":
+                nTree.children.append(TerminalNode("RELATIONALOP", self.tokenList[0][1])); self.getNextToken()
+                self.simpleExpr(nTree)
 
         tree.children.append(nTree)
 
@@ -532,8 +536,11 @@ class Parser:
         if self.tokenList[0][0] == "LET":
             self.variableDecl(nTree)
 
-            if self.tokenList[0][0] == ";":
-                self.getNextToken()
+            if len(self.tokenList) > 0:
+                if self.tokenList[0][0] == ";":
+                    self.getNextToken()
+                else:
+                    raise Exception ("Error: missing semi-colon")
             else:
                 raise Exception ("Error: missing semi-colon")
 
@@ -541,9 +548,11 @@ class Parser:
         elif self.tokenList[0][0] == "IDENTIFIER":
             self.assignment(nTree)
             
-            if self.tokenList and self.tokenList[0][0] == ";":
-                self.getNextToken()
-
+            if len(self.tokenList) > 0:
+                if self.tokenList[0][0] == ";":
+                    self.getNextToken()
+                else:
+                    raise Exception ("Error: missing semi-colon")
             else:
                 raise Exception ("Error: missing semi-colon")
 
@@ -551,9 +560,11 @@ class Parser:
         elif self.tokenList[0][0] == "__PRINT":
             self.printStatement(nTree)
 
-            if self.tokenList[0][0] == ";":
-                self.getNextToken()
-
+            if len(self.tokenList) > 0:
+                if self.tokenList[0][0] == ";":
+                    self.getNextToken()
+                else:
+                    raise Exception ("Error: missing semi-colon")
             else:
                 raise Exception ("Error: missing semi-colon")
 
@@ -561,9 +572,11 @@ class Parser:
         elif self.tokenList[0][0] == "__DELAY":
             self.delayStatement(nTree)
 
-            if self.tokenList[0][0] == ";":
-                self.getNextToken()
-
+            if len(self.tokenList) > 0:
+                if self.tokenList[0][0] == ";":
+                    self.getNextToken()
+                else:
+                    raise Exception ("Error: missing semi-colon")
             else:
                 raise Exception ("Error: missing semi-colon")
 
@@ -571,9 +584,11 @@ class Parser:
         elif self.tokenList[0][0] in ["__PIXEL", "__PIXELR"]:
             self.pixelStatement(nTree)
 
-            if self.tokenList[0][0] == ";":
-                self.getNextToken()
-
+            if len(self.tokenList) > 0:
+                if self.tokenList[0][0] == ";":
+                    self.getNextToken()
+                else:
+                    raise Exception ("Error: missing semi-colon")
             else:
                 raise Exception ("Error: missing semi-colon")
 
@@ -593,9 +608,11 @@ class Parser:
         elif self.tokenList[0][0] == "RETURN":
             self.rtrnStatement(nTree)
             
-            if self.tokenList[0][0] == ";":
-                self.getNextToken()
-
+            if len(self.tokenList) > 0:
+                if self.tokenList[0][0] == ";":
+                    self.getNextToken()
+                else:
+                    raise Exception ("Error: missing semi-colon")
             else:
                 raise Exception ("Error: missing semi-colon")
 
