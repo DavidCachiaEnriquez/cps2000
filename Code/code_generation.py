@@ -62,8 +62,8 @@ class codeGeneration:
                 else:
                     self.P.append("alloc")
 
-                if "tempNameToRemove" in self.symbols.variables[-1]:
-                    self.symbols.variables[-1].pop("tempNameToRemove")
+                if "tempNameToRemoveDoNotNameAVariableThis" in self.symbols.variables[-1]:
+                    self.symbols.variables[-1].pop("tempNameToRemoveDoNotNameAVariableThis")
 
                 varName = tree.children[0].value
                 varValue = tree.children[3]
@@ -82,8 +82,8 @@ class codeGeneration:
                 else:
                     list.append("alloc")
 
-                if "tempNameToRemove" in self.symbols.variables[-1]:
-                    self.symbols.variables[-1].pop("tempNameToRemove")
+                if "tempNameToRemoveDoNotNameAVariableThis" in self.symbols.variables[-1]:
+                    self.symbols.variables[-1].pop("tempNameToRemoveDoNotNameAVariableThis")
 
                 varName = tree.children[0].value
                 varValue = tree.children[3]
@@ -172,7 +172,7 @@ class codeGeneration:
 
             for i in self.symbols.variables[:-1]:
                 for j in i:
-                    if j != "tempNameToRemove":
+                    if j != "tempNameToRemoveDoNotNameAVariableThis":
                         i[j][1] = (i[j][1][0], i[j][1][1]+1)
 
 
@@ -194,11 +194,11 @@ class codeGeneration:
             tempList.append("jmp")
             count1_2 = len(tempList)
             
-            self.symbols.variables[-1]["tempNameToRemove"] = [None, (None, None)]
+            self.symbols.variables[-1]["tempNameToRemoveDoNotNameAVariableThis"] = [None, (None, None)]
             
             self.traverse(tree.children[1], tempList)
-            if "tempNameToRemove" in self.symbols.variables[-1]:
-                    self.symbols.variables[-1].pop("tempNameToRemove")
+            if "tempNameToRemoveDoNotNameAVariableThis" in self.symbols.variables[-1]:
+                    self.symbols.variables[-1].pop("tempNameToRemoveDoNotNameAVariableThis")
             tempList = self.flatten(tempList)
             
 
@@ -222,7 +222,7 @@ class codeGeneration:
 
             for i in self.symbols.variables[:-1]:
                 for j in i:
-                    if j != "tempNameToRemove":
+                    if j != "tempNameToRemoveDoNotNameAVariableThis":
                         i[j][1] = (i[j][1][0], i[j][1][1]-1)
 
             self.symbols.variables.pop(-1); self.symbols.functions.pop(-1)
@@ -238,7 +238,7 @@ class codeGeneration:
 
             for i in self.symbols.variables[:-1]:
                 for j in i:
-                    if j != "tempNameToRemove":
+                    if j != "tempNameToRemoveDoNotNameAVariableThis":
                         i[j][1] = (i[j][1][0], i[j][1][1]+1)
 
             if len(tree.children)-1 == 3:
@@ -264,10 +264,10 @@ class codeGeneration:
 
 
                 # BLOCK
-                self.symbols.variables[-1]["tempNameToRemove"] = [None, (None, None)]
+                self.symbols.variables[-1]["tempNameToRemoveDoNotNameAVariableThis"] = [None, (None, None)]
                 self.traverse(tree.children[3], tempList)
-                if "tempNameToRemove" in self.symbols.variables[-1]:
-                    self.symbols.variables[-1].pop("tempNameToRemove")
+                if "tempNameToRemoveDoNotNameAVariableThis" in self.symbols.variables[-1]:
+                    self.symbols.variables[-1].pop("tempNameToRemoveDoNotNameAVariableThis")
                 tempList = self.flatten(tempList)
 
                 
@@ -312,10 +312,10 @@ class codeGeneration:
                     count1_2 = len(tempList)
 
                     # BLOCK
-                    self.symbols.variables[-1]["tempNameToRemove"] = [None, (None, None)]
+                    self.symbols.variables[-1]["tempNameToRemoveDoNotNameAVariableThis"] = [None, (None, None)]
                     self.traverse(tree.children[2], tempList)
-                    if "tempNameToRemove" in self.symbols.variables[-1]:
-                        self.symbols.variables[-1].pop("tempNameToRemove")
+                    if "tempNameToRemoveDoNotNameAVariableThis" in self.symbols.variables[-1]:
+                        self.symbols.variables[-1].pop("tempNameToRemoveDoNotNameAVariableThis")
                     tempList = self.flatten(tempList)
 
                     # ASSIGNMENT
@@ -362,10 +362,10 @@ class codeGeneration:
                     count1_2 = len(tempList)
 
                     # BLOCK
-                    self.symbols.variables[-1]["tempNameToRemove"] = [None, (None, None)]
+                    self.symbols.variables[-1]["tempNameToRemoveDoNotNameAVariableThis"] = [None, (None, None)]
                     self.traverse(tree.children[2], tempList)
-                    if "tempNameToRemove" in self.symbols.variables[-1]:
-                        self.symbols.variables[-1].pop("tempNameToRemove")
+                    if "tempNameToRemoveDoNotNameAVariableThis" in self.symbols.variables[-1]:
+                        self.symbols.variables[-1].pop("tempNameToRemoveDoNotNameAVariableThis")
                     tempList = self.flatten(tempList)
 
                     tempList.append("push #PC-")
@@ -404,10 +404,10 @@ class codeGeneration:
                 count1_2 = len(tempList)
 
                 # BLOCK
-                self.symbols.variables[-1]["tempNameToRemove"] = [None, (None, None)]
+                self.symbols.variables[-1]["tempNameToRemoveDoNotNameAVariableThis"] = [None, (None, None)]
                 self.traverse(tree.children[1], tempList)
-                if "tempNameToRemove" in self.symbols.variables[-1]:
-                        self.symbols.variables[-1].pop("tempNameToRemove")
+                if "tempNameToRemoveDoNotNameAVariableThis" in self.symbols.variables[-1]:
+                        self.symbols.variables[-1].pop("tempNameToRemoveDoNotNameAVariableThis")
                 tempList = self.flatten(tempList)
 
                 tempList.append("push #PC-")
@@ -431,7 +431,7 @@ class codeGeneration:
 
             for i in self.symbols.variables[:-1]:
                 for j in i:
-                    if j != "tempNameToRemove":
+                    if j != "tempNameToRemoveDoNotNameAVariableThis":
                         i[j][1] = (i[j][1][0], i[j][1][1]-1)
 
             self.symbols.variables.pop(-1); self.symbols.functions.pop(-1)
@@ -447,7 +447,7 @@ class codeGeneration:
 
             for i in self.symbols.variables[:-1]:
                 for j in i:
-                    if j != "tempNameToRemove":
+                    if j != "tempNameToRemoveDoNotNameAVariableThis":
                         i[j][1] = (i[j][1][0], i[j][1][1]+1)
             
             tempList.append("push #PC+")
@@ -468,10 +468,10 @@ class codeGeneration:
                 self.getVarValueNP(i)
 
 
-            self.symbols.variables[-1]["tempNameToRemove"] = [None, (None, None)]
+            self.symbols.variables[-1]["tempNameToRemoveDoNotNameAVariableThis"] = [None, (None, None)]
             self.traverse(tree.children[1], tempList)
-            if "tempNameToRemove" in self.symbols.variables[-1]:
-                self.symbols.variables[-1].pop("tempNameToRemove")
+            if "tempNameToRemoveDoNotNameAVariableThis" in self.symbols.variables[-1]:
+                self.symbols.variables[-1].pop("tempNameToRemoveDoNotNameAVariableThis")
             tempList = self.flatten(tempList)
 
 
@@ -498,7 +498,7 @@ class codeGeneration:
 
             for i in self.symbols.variables[:-1]:
                 for j in i:
-                    if j != "tempNameToRemove":
+                    if j != "tempNameToRemoveDoNotNameAVariableThis":
                         i[j][1] = (i[j][1][0], i[j][1][1]-1)
 
             self.symbols.variables.pop(-1); self.symbols.functions.pop(-1)
