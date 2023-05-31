@@ -1,10 +1,635 @@
 <PROGRAM>
   <PIXELSTATEMENT>
     <__PIXELR> __pixelr </__PIXELR>
-    <INTEGERLITERAL> 5 </INTEGERLITERAL>
-    <FLOATLITERAL> 4.1 </FLOATLITERAL>
-    <INTEGERLITERAL> 5 </INTEGERLITERAL>
-    <INTEGERLITERAL> 5 </INTEGERLITERAL>
-    <COLOURLITERAL> #123456 </COLOURLITERAL>
+    <PADHEIGHT> __height </PADHEIGHT>
+    <PADWIDTH> __width </PADWIDTH>
+    <INTEGERLITERAL> 0 </INTEGERLITERAL>
+    <INTEGERLITERAL> 0 </INTEGERLITERAL>
+    <COLOURLITERAL> #000000 </COLOURLITERAL>
   </PIXELSTATEMENT>
+  <VARIABLEDECL>
+    <IDENTIFIER> startPoint </IDENTIFIER>
+    <TYPE> int </TYPE>
+    <EQUALS> = </EQUALS>
+    <INTEGERLITERAL> 0 </INTEGERLITERAL>
+  </VARIABLEDECL>
+  <VARIABLEDECL>
+    <IDENTIFIER> bHeight </IDENTIFIER>
+    <TYPE> int </TYPE>
+    <EQUALS> = </EQUALS>
+    <INTEGERLITERAL> 15 </INTEGERLITERAL>
+  </VARIABLEDECL>
+  <VARIABLEDECL>
+    <IDENTIFIER> bWidth </IDENTIFIER>
+    <TYPE> int </TYPE>
+    <EQUALS> = </EQUALS>
+    <INTEGERLITERAL> 18 </INTEGERLITERAL>
+  </VARIABLEDECL>
+  <VARIABLEDECL>
+    <IDENTIFIER> counter </IDENTIFIER>
+    <TYPE> int </TYPE>
+    <EQUALS> = </EQUALS>
+    <INTEGERLITERAL> 0 </INTEGERLITERAL>
+  </VARIABLEDECL>
+  <VARIABLEDECL>
+    <IDENTIFIER> x </IDENTIFIER>
+    <TYPE> int </TYPE>
+    <EQUALS> = </EQUALS>
+    <INTEGERLITERAL> 0 </INTEGERLITERAL>
+  </VARIABLEDECL>
+  <WHILESTATEMENT>
+    <EXPR>
+      <IDENTIFIER> x </IDENTIFIER>
+      <RELATIONALOP> < </RELATIONALOP>
+      <PADWIDTH> __width </PADWIDTH>
+    </EXPR>
+    <BLOCK>
+      <IFSTATEMENT>
+        <EXPR>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <RELATIONALOP> == </RELATIONALOP>
+          <INTEGERLITERAL> 1 </INTEGERLITERAL>
+        </EXPR>
+        <PIXELSTATEMENT>
+          <__PIXELR> __pixelr </__PIXELR>
+          <IDENTIFIER> bHeight </IDENTIFIER>
+          <IDENTIFIER> bWidth </IDENTIFIER>
+          <IDENTIFIER> startPoint </IDENTIFIER>
+          <IDENTIFIER> x </IDENTIFIER>
+          <COLOURLITERAL> #dfe0eb </COLOURLITERAL>
+        </PIXELSTATEMENT>
+        <BLOCK>
+          <PIXELSTATEMENT>
+            <__PIXELR> __pixelr </__PIXELR>
+            <IDENTIFIER> bHeight </IDENTIFIER>
+            <IDENTIFIER> bWidth </IDENTIFIER>
+            <IDENTIFIER> startPoint </IDENTIFIER>
+            <IDENTIFIER> x </IDENTIFIER>
+            <COLOURLITERAL> #1a1818 </COLOURLITERAL>
+          </PIXELSTATEMENT>
+          <IFSTATEMENT>
+            <EXPR>
+              <IDENTIFIER> counter </IDENTIFIER>
+              <RELATIONALOP> == </RELATIONALOP>
+              <INTEGERLITERAL> 6 </INTEGERLITERAL>
+            </EXPR>
+            <ASSIGNMENT>
+              <IDENTIFIER> counter </IDENTIFIER>
+              <EQUALS> = </EQUALS>
+              <UNARY>
+                <-> - </->
+                <INTEGERLITERAL> 1 </INTEGERLITERAL>
+              </UNARY>
+            </ASSIGNMENT>
+          </IFSTATEMENT>
+        </BLOCK>
+      </IFSTATEMENT>
+      <ASSIGNMENT>
+        <IDENTIFIER> x </IDENTIFIER>
+        <EQUALS> = </EQUALS>
+        <SIMPLEEXPR>
+          <IDENTIFIER> x </IDENTIFIER>
+          <ADDITIVEOP> + </ADDITIVEOP>
+          <IDENTIFIER> bWidth </IDENTIFIER>
+        </SIMPLEEXPR>
+      </ASSIGNMENT>
+      <ASSIGNMENT>
+        <IDENTIFIER> counter </IDENTIFIER>
+        <EQUALS> = </EQUALS>
+        <SIMPLEEXPR>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <ADDITIVEOP> + </ADDITIVEOP>
+          <INTEGERLITERAL> 1 </INTEGERLITERAL>
+        </SIMPLEEXPR>
+      </ASSIGNMENT>
+    </BLOCK>
+  </WHILESTATEMENT>
+  <ASSIGNMENT>
+    <IDENTIFIER> startPoint </IDENTIFIER>
+    <EQUALS> = </EQUALS>
+    <SIMPLEEXPR>
+      <IDENTIFIER> startPoint </IDENTIFIER>
+      <ADDITIVEOP> + </ADDITIVEOP>
+      <IDENTIFIER> bHeight </IDENTIFIER>
+    </SIMPLEEXPR>
+  </ASSIGNMENT>
+  <VARIABLEDECL>
+    <IDENTIFIER> mHeight </IDENTIFIER>
+    <TYPE> int </TYPE>
+    <EQUALS> = </EQUALS>
+    <INTEGERLITERAL> 5 </INTEGERLITERAL>
+  </VARIABLEDECL>
+  <VARIABLEDECL>
+    <IDENTIFIER> mWidth </IDENTIFIER>
+    <TYPE> int </TYPE>
+    <EQUALS> = </EQUALS>
+    <INTEGERLITERAL> 15 </INTEGERLITERAL>
+  </VARIABLEDECL>
+  <ASSIGNMENT>
+    <IDENTIFIER> counter </IDENTIFIER>
+    <EQUALS> = </EQUALS>
+    <INTEGERLITERAL> 0 </INTEGERLITERAL>
+  </ASSIGNMENT>
+  <VARIABLEDECL>
+    <IDENTIFIER> y </IDENTIFIER>
+    <TYPE> int </TYPE>
+    <EQUALS> = </EQUALS>
+    <INTEGERLITERAL> 0 </INTEGERLITERAL>
+  </VARIABLEDECL>
+  <WHILESTATEMENT>
+    <EXPR>
+      <IDENTIFIER> y </IDENTIFIER>
+      <RELATIONALOP> < </RELATIONALOP>
+      <PADWIDTH> __width </PADWIDTH>
+    </EXPR>
+    <BLOCK>
+      <IFSTATEMENT>
+        <EXPR>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <RELATIONALOP> == </RELATIONALOP>
+          <INTEGERLITERAL> 0 </INTEGERLITERAL>
+        </EXPR>
+        <PIXELSTATEMENT>
+          <__PIXELR> __pixelr </__PIXELR>
+          <IDENTIFIER> mHeight </IDENTIFIER>
+          <IDENTIFIER> mWidth </IDENTIFIER>
+          <IDENTIFIER> startPoint </IDENTIFIER>
+          <IDENTIFIER> y </IDENTIFIER>
+          <COLOURLITERAL> #1020b3 </COLOURLITERAL>
+        </PIXELSTATEMENT>
+      </IFSTATEMENT>
+      <IFSTATEMENT>
+        <EXPR>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <RELATIONALOP> == </RELATIONALOP>
+          <INTEGERLITERAL> 1 </INTEGERLITERAL>
+        </EXPR>
+        <PIXELSTATEMENT>
+          <__PIXELR> __pixelr </__PIXELR>
+          <IDENTIFIER> mHeight </IDENTIFIER>
+          <IDENTIFIER> mWidth </IDENTIFIER>
+          <IDENTIFIER> startPoint </IDENTIFIER>
+          <IDENTIFIER> y </IDENTIFIER>
+          <COLOURLITERAL> #1a1818 </COLOURLITERAL>
+        </PIXELSTATEMENT>
+      </IFSTATEMENT>
+      <IFSTATEMENT>
+        <EXPR>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <RELATIONALOP> == </RELATIONALOP>
+          <INTEGERLITERAL> 2 </INTEGERLITERAL>
+        </EXPR>
+        <PIXELSTATEMENT>
+          <__PIXELR> __pixelr </__PIXELR>
+          <IDENTIFIER> mHeight </IDENTIFIER>
+          <IDENTIFIER> mWidth </IDENTIFIER>
+          <IDENTIFIER> startPoint </IDENTIFIER>
+          <IDENTIFIER> y </IDENTIFIER>
+          <COLOURLITERAL> #d140d6 </COLOURLITERAL>
+        </PIXELSTATEMENT>
+      </IFSTATEMENT>
+      <IFSTATEMENT>
+        <EXPR>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <RELATIONALOP> == </RELATIONALOP>
+          <INTEGERLITERAL> 3 </INTEGERLITERAL>
+        </EXPR>
+        <PIXELSTATEMENT>
+          <__PIXELR> __pixelr </__PIXELR>
+          <IDENTIFIER> mHeight </IDENTIFIER>
+          <IDENTIFIER> mWidth </IDENTIFIER>
+          <IDENTIFIER> startPoint </IDENTIFIER>
+          <IDENTIFIER> y </IDENTIFIER>
+          <COLOURLITERAL> #1a1818 </COLOURLITERAL>
+        </PIXELSTATEMENT>
+      </IFSTATEMENT>
+      <IFSTATEMENT>
+        <EXPR>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <RELATIONALOP> == </RELATIONALOP>
+          <INTEGERLITERAL> 4 </INTEGERLITERAL>
+        </EXPR>
+        <PIXELSTATEMENT>
+          <__PIXELR> __pixelr </__PIXELR>
+          <IDENTIFIER> mHeight </IDENTIFIER>
+          <IDENTIFIER> mWidth </IDENTIFIER>
+          <IDENTIFIER> startPoint </IDENTIFIER>
+          <IDENTIFIER> y </IDENTIFIER>
+          <COLOURLITERAL> #72e6f7 </COLOURLITERAL>
+        </PIXELSTATEMENT>
+      </IFSTATEMENT>
+      <IFSTATEMENT>
+        <EXPR>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <RELATIONALOP> == </RELATIONALOP>
+          <INTEGERLITERAL> 5 </INTEGERLITERAL>
+        </EXPR>
+        <PIXELSTATEMENT>
+          <__PIXELR> __pixelr </__PIXELR>
+          <IDENTIFIER> mHeight </IDENTIFIER>
+          <IDENTIFIER> mWidth </IDENTIFIER>
+          <IDENTIFIER> startPoint </IDENTIFIER>
+          <IDENTIFIER> y </IDENTIFIER>
+          <COLOURLITERAL> #1a1818 </COLOURLITERAL>
+        </PIXELSTATEMENT>
+      </IFSTATEMENT>
+      <IFSTATEMENT>
+        <EXPR>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <RELATIONALOP> == </RELATIONALOP>
+          <INTEGERLITERAL> 6 </INTEGERLITERAL>
+        </EXPR>
+        <BLOCK>
+          <PIXELSTATEMENT>
+            <__PIXELR> __pixelr </__PIXELR>
+            <IDENTIFIER> mHeight </IDENTIFIER>
+            <IDENTIFIER> mWidth </IDENTIFIER>
+            <IDENTIFIER> startPoint </IDENTIFIER>
+            <IDENTIFIER> y </IDENTIFIER>
+            <COLOURLITERAL> #dfe0eb </COLOURLITERAL>
+          </PIXELSTATEMENT>
+          <ASSIGNMENT>
+            <IDENTIFIER> counter </IDENTIFIER>
+            <EQUALS> = </EQUALS>
+            <UNARY>
+              <-> - </->
+              <INTEGERLITERAL> 1 </INTEGERLITERAL>
+            </UNARY>
+          </ASSIGNMENT>
+        </BLOCK>
+      </IFSTATEMENT>
+      <ASSIGNMENT>
+        <IDENTIFIER> y </IDENTIFIER>
+        <EQUALS> = </EQUALS>
+        <SIMPLEEXPR>
+          <IDENTIFIER> y </IDENTIFIER>
+          <ADDITIVEOP> + </ADDITIVEOP>
+          <IDENTIFIER> mWidth </IDENTIFIER>
+        </SIMPLEEXPR>
+      </ASSIGNMENT>
+      <ASSIGNMENT>
+        <IDENTIFIER> counter </IDENTIFIER>
+        <EQUALS> = </EQUALS>
+        <SIMPLEEXPR>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <ADDITIVEOP> + </ADDITIVEOP>
+          <INTEGERLITERAL> 1 </INTEGERLITERAL>
+        </SIMPLEEXPR>
+      </ASSIGNMENT>
+    </BLOCK>
+  </WHILESTATEMENT>
+  <ASSIGNMENT>
+    <IDENTIFIER> startPoint </IDENTIFIER>
+    <EQUALS> = </EQUALS>
+    <SIMPLEEXPR>
+      <IDENTIFIER> startPoint </IDENTIFIER>
+      <ADDITIVEOP> + </ADDITIVEOP>
+      <IDENTIFIER> mHeight </IDENTIFIER>
+    </SIMPLEEXPR>
+  </ASSIGNMENT>
+  <VARIABLEDECL>
+    <IDENTIFIER> tHeight </IDENTIFIER>
+    <TYPE> int </TYPE>
+    <EQUALS> = </EQUALS>
+    <PADHEIGHT> __height </PADHEIGHT>
+  </VARIABLEDECL>
+  <VARIABLEDECL>
+    <IDENTIFIER> tWidth </IDENTIFIER>
+    <TYPE> int </TYPE>
+    <EQUALS> = </EQUALS>
+    <INTEGERLITERAL> 15 </INTEGERLITERAL>
+  </VARIABLEDECL>
+  <ASSIGNMENT>
+    <IDENTIFIER> counter </IDENTIFIER>
+    <EQUALS> = </EQUALS>
+    <INTEGERLITERAL> 0 </INTEGERLITERAL>
+  </ASSIGNMENT>
+  <VARIABLEDECL>
+    <IDENTIFIER> z </IDENTIFIER>
+    <TYPE> int </TYPE>
+    <EQUALS> = </EQUALS>
+    <INTEGERLITERAL> 0 </INTEGERLITERAL>
+  </VARIABLEDECL>
+  <WHILESTATEMENT>
+    <EXPR>
+      <IDENTIFIER> z </IDENTIFIER>
+      <RELATIONALOP> < </RELATIONALOP>
+      <PADWIDTH> __width </PADWIDTH>
+    </EXPR>
+    <BLOCK>
+      <IFSTATEMENT>
+        <EXPR>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <RELATIONALOP> == </RELATIONALOP>
+          <INTEGERLITERAL> 0 </INTEGERLITERAL>
+        </EXPR>
+        <PIXELSTATEMENT>
+          <__PIXELR> __pixelr </__PIXELR>
+          <IDENTIFIER> tHeight </IDENTIFIER>
+          <IDENTIFIER> tWidth </IDENTIFIER>
+          <IDENTIFIER> startPoint </IDENTIFIER>
+          <IDENTIFIER> z </IDENTIFIER>
+          <COLOURLITERAL> #dfe0eb </COLOURLITERAL>
+        </PIXELSTATEMENT>
+      </IFSTATEMENT>
+      <IFSTATEMENT>
+        <EXPR>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <RELATIONALOP> == </RELATIONALOP>
+          <INTEGERLITERAL> 1 </INTEGERLITERAL>
+        </EXPR>
+        <PIXELSTATEMENT>
+          <__PIXELR> __pixelr </__PIXELR>
+          <IDENTIFIER> tHeight </IDENTIFIER>
+          <IDENTIFIER> tWidth </IDENTIFIER>
+          <IDENTIFIER> startPoint </IDENTIFIER>
+          <IDENTIFIER> z </IDENTIFIER>
+          <COLOURLITERAL> #eff21f </COLOURLITERAL>
+        </PIXELSTATEMENT>
+      </IFSTATEMENT>
+      <IFSTATEMENT>
+        <EXPR>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <RELATIONALOP> == </RELATIONALOP>
+          <INTEGERLITERAL> 2 </INTEGERLITERAL>
+        </EXPR>
+        <PIXELSTATEMENT>
+          <__PIXELR> __pixelr </__PIXELR>
+          <IDENTIFIER> tHeight </IDENTIFIER>
+          <IDENTIFIER> tWidth </IDENTIFIER>
+          <IDENTIFIER> startPoint </IDENTIFIER>
+          <IDENTIFIER> z </IDENTIFIER>
+          <COLOURLITERAL> #8afbff </COLOURLITERAL>
+        </PIXELSTATEMENT>
+      </IFSTATEMENT>
+      <IFSTATEMENT>
+        <EXPR>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <RELATIONALOP> == </RELATIONALOP>
+          <INTEGERLITERAL> 3 </INTEGERLITERAL>
+        </EXPR>
+        <PIXELSTATEMENT>
+          <__PIXELR> __pixelr </__PIXELR>
+          <IDENTIFIER> tHeight </IDENTIFIER>
+          <IDENTIFIER> tWidth </IDENTIFIER>
+          <IDENTIFIER> startPoint </IDENTIFIER>
+          <IDENTIFIER> z </IDENTIFIER>
+          <COLOURLITERAL> #28d431 </COLOURLITERAL>
+        </PIXELSTATEMENT>
+      </IFSTATEMENT>
+      <IFSTATEMENT>
+        <EXPR>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <RELATIONALOP> == </RELATIONALOP>
+          <INTEGERLITERAL> 4 </INTEGERLITERAL>
+        </EXPR>
+        <PIXELSTATEMENT>
+          <__PIXELR> __pixelr </__PIXELR>
+          <IDENTIFIER> tHeight </IDENTIFIER>
+          <IDENTIFIER> tWidth </IDENTIFIER>
+          <IDENTIFIER> startPoint </IDENTIFIER>
+          <IDENTIFIER> z </IDENTIFIER>
+          <COLOURLITERAL> #ab17b3 </COLOURLITERAL>
+        </PIXELSTATEMENT>
+      </IFSTATEMENT>
+      <IFSTATEMENT>
+        <EXPR>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <RELATIONALOP> == </RELATIONALOP>
+          <INTEGERLITERAL> 5 </INTEGERLITERAL>
+        </EXPR>
+        <PIXELSTATEMENT>
+          <__PIXELR> __pixelr </__PIXELR>
+          <IDENTIFIER> tHeight </IDENTIFIER>
+          <IDENTIFIER> tWidth </IDENTIFIER>
+          <IDENTIFIER> startPoint </IDENTIFIER>
+          <IDENTIFIER> z </IDENTIFIER>
+          <COLOURLITERAL> #e61e24 </COLOURLITERAL>
+        </PIXELSTATEMENT>
+      </IFSTATEMENT>
+      <IFSTATEMENT>
+        <EXPR>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <RELATIONALOP> == </RELATIONALOP>
+          <INTEGERLITERAL> 6 </INTEGERLITERAL>
+        </EXPR>
+        <BLOCK>
+          <PIXELSTATEMENT>
+            <__PIXELR> __pixelr </__PIXELR>
+            <IDENTIFIER> tHeight </IDENTIFIER>
+            <IDENTIFIER> tWidth </IDENTIFIER>
+            <IDENTIFIER> startPoint </IDENTIFIER>
+            <IDENTIFIER> z </IDENTIFIER>
+            <COLOURLITERAL> #0a178c </COLOURLITERAL>
+          </PIXELSTATEMENT>
+          <ASSIGNMENT>
+            <IDENTIFIER> counter </IDENTIFIER>
+            <EQUALS> = </EQUALS>
+            <UNARY>
+              <-> - </->
+              <INTEGERLITERAL> 1 </INTEGERLITERAL>
+            </UNARY>
+          </ASSIGNMENT>
+        </BLOCK>
+      </IFSTATEMENT>
+      <ASSIGNMENT>
+        <IDENTIFIER> z </IDENTIFIER>
+        <EQUALS> = </EQUALS>
+        <SIMPLEEXPR>
+          <IDENTIFIER> z </IDENTIFIER>
+          <ADDITIVEOP> + </ADDITIVEOP>
+          <IDENTIFIER> tWidth </IDENTIFIER>
+        </SIMPLEEXPR>
+      </ASSIGNMENT>
+      <ASSIGNMENT>
+        <IDENTIFIER> counter </IDENTIFIER>
+        <EQUALS> = </EQUALS>
+        <SIMPLEEXPR>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <ADDITIVEOP> + </ADDITIVEOP>
+          <INTEGERLITERAL> 1 </INTEGERLITERAL>
+        </SIMPLEEXPR>
+      </ASSIGNMENT>
+    </BLOCK>
+  </WHILESTATEMENT>
+  <ASSIGNMENT>
+    <IDENTIFIER> counter </IDENTIFIER>
+    <EQUALS> = </EQUALS>
+    <INTEGERLITERAL> 6 </INTEGERLITERAL>
+  </ASSIGNMENT>
+  <WHILESTATEMENT>
+    <BOOLEANLITERAL> true </BOOLEANLITERAL>
+    <BLOCK>
+      <IFSTATEMENT>
+        <EXPR>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <RELATIONALOP> < </RELATIONALOP>
+          <INTEGERLITERAL> 0 </INTEGERLITERAL>
+        </EXPR>
+        <ASSIGNMENT>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <EQUALS> = </EQUALS>
+          <INTEGERLITERAL> 6 </INTEGERLITERAL>
+        </ASSIGNMENT>
+      </IFSTATEMENT>
+      <VARIABLEDECL>
+        <IDENTIFIER> a </IDENTIFIER>
+        <TYPE> int </TYPE>
+        <EQUALS> = </EQUALS>
+        <INTEGERLITERAL> 0 </INTEGERLITERAL>
+      </VARIABLEDECL>
+      <WHILESTATEMENT>
+        <EXPR>
+          <IDENTIFIER> a </IDENTIFIER>
+          <RELATIONALOP> < </RELATIONALOP>
+          <PADWIDTH> __width </PADWIDTH>
+        </EXPR>
+        <BLOCK>
+          <IFSTATEMENT>
+            <EXPR>
+              <IDENTIFIER> counter </IDENTIFIER>
+              <RELATIONALOP> == </RELATIONALOP>
+              <INTEGERLITERAL> 0 </INTEGERLITERAL>
+            </EXPR>
+            <PIXELSTATEMENT>
+              <__PIXELR> __pixelr </__PIXELR>
+              <IDENTIFIER> tHeight </IDENTIFIER>
+              <IDENTIFIER> tWidth </IDENTIFIER>
+              <IDENTIFIER> startPoint </IDENTIFIER>
+              <IDENTIFIER> a </IDENTIFIER>
+              <COLOURLITERAL> #dfe0eb </COLOURLITERAL>
+            </PIXELSTATEMENT>
+          </IFSTATEMENT>
+          <IFSTATEMENT>
+            <EXPR>
+              <IDENTIFIER> counter </IDENTIFIER>
+              <RELATIONALOP> == </RELATIONALOP>
+              <INTEGERLITERAL> 1 </INTEGERLITERAL>
+            </EXPR>
+            <PIXELSTATEMENT>
+              <__PIXELR> __pixelr </__PIXELR>
+              <IDENTIFIER> tHeight </IDENTIFIER>
+              <IDENTIFIER> tWidth </IDENTIFIER>
+              <IDENTIFIER> startPoint </IDENTIFIER>
+              <IDENTIFIER> a </IDENTIFIER>
+              <COLOURLITERAL> #eff21f </COLOURLITERAL>
+            </PIXELSTATEMENT>
+          </IFSTATEMENT>
+          <IFSTATEMENT>
+            <EXPR>
+              <IDENTIFIER> counter </IDENTIFIER>
+              <RELATIONALOP> == </RELATIONALOP>
+              <INTEGERLITERAL> 2 </INTEGERLITERAL>
+            </EXPR>
+            <PIXELSTATEMENT>
+              <__PIXELR> __pixelr </__PIXELR>
+              <IDENTIFIER> tHeight </IDENTIFIER>
+              <IDENTIFIER> tWidth </IDENTIFIER>
+              <IDENTIFIER> startPoint </IDENTIFIER>
+              <IDENTIFIER> a </IDENTIFIER>
+              <COLOURLITERAL> #8afbff </COLOURLITERAL>
+            </PIXELSTATEMENT>
+          </IFSTATEMENT>
+          <IFSTATEMENT>
+            <EXPR>
+              <IDENTIFIER> counter </IDENTIFIER>
+              <RELATIONALOP> == </RELATIONALOP>
+              <INTEGERLITERAL> 3 </INTEGERLITERAL>
+            </EXPR>
+            <PIXELSTATEMENT>
+              <__PIXELR> __pixelr </__PIXELR>
+              <IDENTIFIER> tHeight </IDENTIFIER>
+              <IDENTIFIER> tWidth </IDENTIFIER>
+              <IDENTIFIER> startPoint </IDENTIFIER>
+              <IDENTIFIER> a </IDENTIFIER>
+              <COLOURLITERAL> #28d431 </COLOURLITERAL>
+            </PIXELSTATEMENT>
+          </IFSTATEMENT>
+          <IFSTATEMENT>
+            <EXPR>
+              <IDENTIFIER> counter </IDENTIFIER>
+              <RELATIONALOP> == </RELATIONALOP>
+              <INTEGERLITERAL> 4 </INTEGERLITERAL>
+            </EXPR>
+            <PIXELSTATEMENT>
+              <__PIXELR> __pixelr </__PIXELR>
+              <IDENTIFIER> tHeight </IDENTIFIER>
+              <IDENTIFIER> tWidth </IDENTIFIER>
+              <IDENTIFIER> startPoint </IDENTIFIER>
+              <IDENTIFIER> a </IDENTIFIER>
+              <COLOURLITERAL> #ab17b3 </COLOURLITERAL>
+            </PIXELSTATEMENT>
+          </IFSTATEMENT>
+          <IFSTATEMENT>
+            <EXPR>
+              <IDENTIFIER> counter </IDENTIFIER>
+              <RELATIONALOP> == </RELATIONALOP>
+              <INTEGERLITERAL> 5 </INTEGERLITERAL>
+            </EXPR>
+            <PIXELSTATEMENT>
+              <__PIXELR> __pixelr </__PIXELR>
+              <IDENTIFIER> tHeight </IDENTIFIER>
+              <IDENTIFIER> tWidth </IDENTIFIER>
+              <IDENTIFIER> startPoint </IDENTIFIER>
+              <IDENTIFIER> a </IDENTIFIER>
+              <COLOURLITERAL> #e61e24 </COLOURLITERAL>
+            </PIXELSTATEMENT>
+          </IFSTATEMENT>
+          <IFSTATEMENT>
+            <EXPR>
+              <IDENTIFIER> counter </IDENTIFIER>
+              <RELATIONALOP> == </RELATIONALOP>
+              <INTEGERLITERAL> 6 </INTEGERLITERAL>
+            </EXPR>
+            <BLOCK>
+              <PIXELSTATEMENT>
+                <__PIXELR> __pixelr </__PIXELR>
+                <IDENTIFIER> tHeight </IDENTIFIER>
+                <IDENTIFIER> tWidth </IDENTIFIER>
+                <IDENTIFIER> startPoint </IDENTIFIER>
+                <IDENTIFIER> a </IDENTIFIER>
+                <COLOURLITERAL> #0a178c </COLOURLITERAL>
+              </PIXELSTATEMENT>
+              <ASSIGNMENT>
+                <IDENTIFIER> counter </IDENTIFIER>
+                <EQUALS> = </EQUALS>
+                <UNARY>
+                  <-> - </->
+                  <INTEGERLITERAL> 1 </INTEGERLITERAL>
+                </UNARY>
+              </ASSIGNMENT>
+            </BLOCK>
+          </IFSTATEMENT>
+          <ASSIGNMENT>
+            <IDENTIFIER> a </IDENTIFIER>
+            <EQUALS> = </EQUALS>
+            <SIMPLEEXPR>
+              <IDENTIFIER> a </IDENTIFIER>
+              <ADDITIVEOP> + </ADDITIVEOP>
+              <IDENTIFIER> tWidth </IDENTIFIER>
+            </SIMPLEEXPR>
+          </ASSIGNMENT>
+          <ASSIGNMENT>
+            <IDENTIFIER> counter </IDENTIFIER>
+            <EQUALS> = </EQUALS>
+            <SIMPLEEXPR>
+              <IDENTIFIER> counter </IDENTIFIER>
+              <ADDITIVEOP> + </ADDITIVEOP>
+              <INTEGERLITERAL> 1 </INTEGERLITERAL>
+            </SIMPLEEXPR>
+          </ASSIGNMENT>
+        </BLOCK>
+      </WHILESTATEMENT>
+      <ASSIGNMENT>
+        <IDENTIFIER> counter </IDENTIFIER>
+        <EQUALS> = </EQUALS>
+        <SIMPLEEXPR>
+          <IDENTIFIER> counter </IDENTIFIER>
+          <ADDITIVEOP> - </ADDITIVEOP>
+          <INTEGERLITERAL> 1 </INTEGERLITERAL>
+        </SIMPLEEXPR>
+      </ASSIGNMENT>
+      <INTEGERLITERAL> 250 </INTEGERLITERAL>
+    </BLOCK>
+  </WHILESTATEMENT>
 </PROGRAM>

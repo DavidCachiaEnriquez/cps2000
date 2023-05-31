@@ -1,8 +1,4 @@
-# SYMBOL TABLE CLASS
-class symbolTable:
-    def __init__(self):
-        self.variables = []
-        self.functions = []
+from Semantic_Analysis import symbolTable
 
 # CODE GENERATOR CLASS
 class codeGeneration:
@@ -563,6 +559,7 @@ class codeGeneration:
             self.symbols.variables.pop(-1); self.symbols.functions.pop(-1)
             self.P.append("halt")
 
+
     def addPush(self, toPush):
         if toPush in ["height", "width"]:
             self.P.append(toPush)
@@ -573,10 +570,47 @@ class codeGeneration:
 
     def getVarValue(self, value):
 
+        if value.name == "BOOLEANLITERAL":
+            if value.value == "true":
+                self.addPush(1)
+                return 1
+            else:
+                self.addPush(0)
+                return 0            
+
+        if value.name == "INTEGERLITERAL":
+            self.addPush(value.value)
+            return value.value
+        
+        if value.name == "FLOATLITERAL":
+            self.addPush(value.value)            
+            return value.value
+        
+        if value.name == "COLOURLITERAL":
+            self.addPush(value.value)            
+            return value.value
+
+        if value.name == "PADWIDTH":
+            self.P.append("width")
+            return 36
+
+        if value.name == "PADHEIGHT":
+            self.P.append("height")
+            return 36
+        
         if value.name == "PADRANDI":
             self.getVarValue(value.children[1])
             
             self.P.append("irnd")
+
+        if value.name == "LITERAL":
+            return self.getVarValue(value.children[0])
+
+        if value.name == "IDENTIFIER":
+            for scope in self.symbols.variables:
+                if value.value in scope:
+                    self.addPush(scope[value.value][1])
+                    return scope[value.value][0]
 
         if value.name == "FUNCTIONCALL":
             if len(value.children) == 1:
@@ -667,44 +701,7 @@ class codeGeneration:
 
         if value.name == "FACTOR":
             return self.getVarValue(value.children[0])
-
-        if value.name == "LITERAL":
-            return self.getVarValue(value.children[0])
-
-        if value.name == "BOOLEANLITERAL":
-            if value.value == "true":
-                self.addPush(1)
-                return 1
-            else:
-                self.addPush(0)
-                return 0            
-
-        if value.name == "INTEGERLITERAL":
-            self.addPush(value.value)
-            return value.value
         
-        if value.name == "FLOATLITERAL":
-            self.addPush(value.value)            
-            return value.value
-        
-        if value.name == "COLOURLITERAL":
-            self.addPush(value.value)            
-            return value.value
-
-        if value.name == "IDENTIFIER":
-            for scope in self.symbols.variables:
-                if value.value in scope:
-                    self.addPush(scope[value.value][1])
-                    return scope[value.value][0]
-
-        if value.name == "PADHEIGHT":
-            self.P.append("height")
-            return 36
-        
-        if value.name == "PADWIDTH":
-            self.P.append("width")
-            return 36
-
     def getVarValueNP(self, value):
         tempMain = []
 

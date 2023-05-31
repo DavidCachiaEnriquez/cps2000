@@ -9,7 +9,7 @@ programs = ["Code/InputPrograms/program1.txt", "Code/InputPrograms/program2.txt"
 
 f = open(programs[3], "r"); code = f.read(); f.close()  
 
-code = "__pixelr 5, 4.1, 5, 5, #123456;"
+# code = "let x:int = 200;"
 
 lexer = Lexer(code)
 parser = Parser(lexer.tokenList)

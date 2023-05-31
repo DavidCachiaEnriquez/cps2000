@@ -1,9 +1,0 @@
-pixelr __height, __width, y, x, colour
---------------------------------------------
-Program 1 - Diagonals (Multiple Colours)
-
-Program 2 - Diagonals (Solid Colours)
-
-Program 3 - Enclosing Squares
-
-Program 4 - SMPTE Bar (Set display to 105, 90)
