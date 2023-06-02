@@ -9,8 +9,6 @@ programs = ["Code/InputPrograms/program1.txt", "Code/InputPrograms/program2.txt"
 
 f = open(programs[3], "r"); code = f.read(); f.close()  
 
-# code = "let x:int = 200;"
-
 lexer = Lexer(code)
 parser = Parser(lexer.tokenList)
 xml = XMLGeneration(parser.tree)
